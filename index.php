@@ -48,7 +48,7 @@ $user = $_POST['name'];
 		if($MysqlStatement_select->num_rows >= 1)
 		{
 		echo "Login erfolgreich. Weiter zu <a href='geheim.html'>internen Bereich</a>" ;
-		header("Location: http://localhost/feedback/feedbackApp/geheim.html");
+		header("Location: http://localhost/feedback/feedbackApp/geheim.php");
 		exit();
 		}
 	?>
