@@ -25,6 +25,7 @@ $Mysql = new Mysql();
 
 
 $sql = "SELECT * FROM users WHERE name=:0 AND pw=:1";
+$sqlAufgaben = "SELECT * FROM aufgaben WHERE a_aktiv = true";
 $MysqlStatement_select = $Mysql->getMysqlStatement($sql);
 $MysqlStatement_select->execute($_POST[name], $_POST[pw]); 
 $pw = $_POST['pw'];
@@ -47,8 +48,7 @@ $user = $_POST['name'];
 	<?php
 		if($MysqlStatement_select->num_rows >= 1)
 		{
-		echo "Login erfolgreich. Weiter zu <a href='geheim.html'>internen Bereich</a>" ;
-		header("Location: http://localhost/feedback/feedbackApp/geheim.php");
+				header("Location: http://localhost/feedback/feedbackApp/geheim.php");
 		exit();
 		}
 	?>
