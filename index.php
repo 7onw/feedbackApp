@@ -32,9 +32,9 @@ $Mysql = new Mysql();
 
 
 /* settings data if a new version is out there and the std STP ID */
-//SELECT * FROM user WHERE name="matthias" AND pw="1234";
+//SELECT * FROM users WHERE name="matthias" AND pw="1234";
 
-$sql = "SELECT * FROM user WHERE name=:0 AND pw=:1";
+$sql = "SELECT * FROM users WHERE name=:0 AND pw=:1";
 $MysqlStatement_select = $Mysql->getMysqlStatement($sql);
 $MysqlStatement_select->execute($_POST[name], $_POST[pw]);
 
