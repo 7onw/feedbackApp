@@ -45,7 +45,8 @@ $MysqlStatement_select2->execute($_POST[name], $_POST[pw]);
     <?php
    
         while ($data = $MysqlStatement_select2->fetchArray()) {
-        echo"<a href='https://www.w3schools.com'>";
+        echo"<a href='givefb.php'>";
+
         echo $data['a_name'];
         echo"</a>";
         echo "<br/>";
