@@ -31,49 +31,32 @@ $MysqlStatement_select2->execute($_POST[name], $_POST[pw]);
 
 <div data-role="page" id="pageone">
     <div data-role="header">
-        <h1>Login</h1>
+        <h1>Aufgaben</h1>
 
     </div>
 
-    <div data-role="main" class="ui-content">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
-            Namse: <input type="text" name="name"><br>
-            PW: <input type="text" name="pw"><br>
-            <input type="submit" value="Login">
-        </form>
-    </div>
-        <?php echo "<br /> SQL Statement: <br/>" . $MysqlStatement_select->sql; ?>
+
+    <?php echo "<br /> SQL Statement: <br/>" . $MysqlStatement_select->sql; ?>
 
     <?php echo "<br /> NUM: " . $MysqlStatement_select->num_rows; ?>
+    <?php echo "<br /><br />"  ?>
 
 
     <?php
-    echo"<a href='https://www.w3schools.com'>";
+   
         while ($data = $MysqlStatement_select2->fetchArray()) {
+        echo"<a href='https://www.w3schools.com'>";
         echo $data['a_name'];
+        echo"</a>";
+        echo "<br/>";
     }
-    echo"</a>";
+
     ?>
 
 
-<div id="header">
-    <h1><a href="geheim.html">GEHEIM</a></h1>
-</div>
-
-<div id="menu">
-    <ul>
-        <li><a href="geheim.html">Entry#1</a></li>
-        <li><a href="side.html">Entry#2</a></li>
-    </ul>
-</div>
-
 <div id="content">
-    <h1>Sample Text</h1>
-    <p>TEXT, Text!</p>
-    <button onClick="printSomeThing();" class="buttonBlack">Button</button>
-    <a href="#" class="buttonBlack"><span></span>Button as LINK</a>
-    <p>&nbsp;</p>
-</div>
+    <button onClick="printSomeThing();" class="buttonBlack">neue Aufgabe</button>
+    </div>
 
 </body>
 </html>
