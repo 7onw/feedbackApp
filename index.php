@@ -16,6 +16,7 @@ include("PHP/MysqlStatement.class.php");
 	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<!-- Include the jQuery Mobile library -->
 	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<title>FeedbackApp</title>
 </head>
 <body>
 
