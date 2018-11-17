@@ -48,7 +48,7 @@ $user = $_POST['name'];
 	<?php
 		if($MysqlStatement_select->num_rows >= 1)
 		{
-				header("Location: http://localhost/feedback/feedbackApp/geheim.php");
+				header("Location: http://localhost/feedback/feedbackApp/main.php");
 		exit();
 		}
 	?>
