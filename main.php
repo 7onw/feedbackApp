@@ -80,22 +80,22 @@
                                             // Name der Aufgabe aus DB auslesen 
                                             // -> Text einfügen (aus DB)!
                                             // -> Foto einfügen!! (aus Webhost; Link in DB)!
-                                        echo "<a href='#popupPeter' data-rel='popup' data-position-to='window' data-transition='pop'>
+                                        echo "<a href='#". $data['a_name']."' data-rel='popup' data-position-to='window' data-transition='pop'>
                                                 <div>
                                                     <div>
                                                         <img src='img/p3.jpg'>
                                                     </div>
                                                     <p><strong>". $data['a_name']."</strong><br></p>
                                                     <p>Which program for illustrating do<br>you recommend?</p>
-                                                </div>";
-                                        echo "</a>";
+                                                </div>
+                                            </a>";
                                             
                                         // Pop-Up 
                                             // Name der Aufgabe aus DB auslesen 
                                             // -> Text einfügen (aus DB)!
                                             // -> Foto einfügen!! (aus Webhost; Link in DB)!
-                                        echo "<div data-role='popup' id='popupPeter' data-overlay-theme='b' data-theme='a' class='ui-corner-all'>
-                                                <h1>".$data['a_name']."</h1>
+                                        echo "<div data-role='popup' id='". $data['a_name']."' data-overlay-theme='b' data-theme='a' class='ui-corner-all'>
+                                                <p><strong>".$data['a_name']."</strong></br></p>
                                                 <form method='post' action=".htmlspecialchars($_SERVER['PHP_SELF']).">
                                                     Feedbackinhalt:<input type='text' name='f_inhalt'><br>
                                                     Aktivieren:<input type='radio' name='f_aktiv'><br>
