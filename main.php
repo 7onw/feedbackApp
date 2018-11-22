@@ -86,7 +86,7 @@
                                                         <img src='img/p3.jpg'>
                                                     </div>
                                                     <p><strong>". $data['a_name']."</strong><br></p>
-                                                    <p>Which program for illustrating do<br>you recommend?</p>
+                                                    <p>". $data['a_inhalt']."</p>
                                                 </div>
                                             </a>";
                                             
@@ -101,6 +101,12 @@
                                                     Aktivieren:<input type='radio' name='f_aktiv'><br>
                                                     <button type='submit'>Abschicken</button>
                                                 </form>
+                                                <img src='images/Microphone.png" id="recordButton" class="recordOff">
+                                                    <span id="recordHelp">Allow your microphone.</span>
+                                                    <div id="recordContainer" class="startContainer">
+                                                        <div id="recordTime"> <span id="sw_m">00</span>:<span id="sw_s">00</span></div>
+                                                        <div id="recordCircle" class="startRecord"><div id="recordText">Record</div></div>
+                                                    </div>
                                                 </div>";
                                     echo '</li>';
                                 }
