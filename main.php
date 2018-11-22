@@ -10,6 +10,18 @@
     <link rel="stylesheet" type="text/css" href="CSS/style.css" media="only screen and (max-width:480px)">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <script language="javascript" type="text/javascript" src="JS/function.js"></script>
+    <script src="recorderControl.js"></script>
+    <script src="js/jquery.min.2.1.js"></script> //Jquery
+    <script src="js/jquery.stopwatch.js"></script> //Jquery Stop Watch
+    <script src="recorder.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        -----
+        -----
+        -----
+    });
+    </script>
+    
     <title>Feedback-App</title>
 </head>
 
@@ -93,16 +105,32 @@
                                             // Name der Aufgabe aus DB auslesen 
                                         echo "<div data-role='popup' id='". $data['a_name']."' data-overlay-theme='b' data-theme='a' class='ui-corner-all'>
                                             <p><strong>".$data['a_name']."</strong></br></p>
-                                                <form method='post' action=".htmlspecialchars($_SERVER['PHP_SELF']).">Feedbackinhalt:
+                                               <form method='post' action=".htmlspecialchars($_SERVER['PHP_SELF']).">Feedbackinhalt:
                                                     <input type='text' name='f_inhalt'><br>Aktivieren:
                                                     <input type='radio' name='f_aktiv'><br>
-                                                    <img src='images/mic.png' id='recordButton' class='recordOff'>
-                                                        <span id='recordHelp'>Allow your microphone.</span>
-                                                        <div id='recordContainer' class='startContainer'>
-                                                            <div id='recordTime'> <span id='sw_m'>00</span>:<span id='sw_s'>00</span></div>
-                                                            <div id='recordCircle' class='startRecord'><div id='recordText'>Record</div></div>
-                                                        </div>
                                                     <button type='submit'>Abschicken</button>
+
+                                                    <div class='audioContainer'>
+                                                        <div class='audioProgress' id='audioProgress10'' style='width:0px'>
+                                                        </div>
+                                                        <div class='audioControl audioPlay' rel='play' id='10'>
+                                                        </div>
+                                                        <div class='audioTime' id='audioTime10''>
+                                                        00.00
+                                                        </div>
+                                                        <div class='audioBar'>
+                                                        </div>
+                                                        <audio preload='auto' src='data:audio/mp3;base64,//sUxAAABAArMFRhgA..' type='audio/mpeg' class='a' id='audio10''>
+                                                            <source>
+                                                        </audio>
+                                                    </div>   
+
+                                                    <img src='images/mic.png' id='recordButton' class='recordOff'>
+                                                    <span id='recordHelp'>Allow your microphone.</span>
+                                                    <div id='recordContainer' class='startContainer'>
+                                                        <div id='recordTime'> <span id='sw_m'>00</span>:<span id='sw_s'>00</span></div>
+                                                        <div id='recordCircle' class='startRecord'><div id='recordText'>Record</div></div>
+                                                    </div>
                                                 </form>
                                         </div>";
                                     echo '</li>';
