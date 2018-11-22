@@ -14,10 +14,10 @@
     <script src="js/jquery.min.2.1.js"></script> //Jquery
     <script src="js/jquery.stopwatch.js"></script> //Jquery Stop Watch
     <script src="recorder.js"></script>
-    <script type="text/javascript">
+    <!--script type="text/javascript">
         $(document).ready(function(){   
         });
-    </script>
+    </script-->
     
     <title>Feedback-App</title>
 </head>
@@ -74,7 +74,6 @@
                     <div id="two" class="tab-content ui-content" date-role="content">
                             <!--?php echo "<br /> SQL Statement: <br/>" . $MysqlStatement_select->sql; ?-->
                             <!--?php echo "<br /> NUM: " . $MysqlStatement_select->num_rows; ?-->
-                            <!--?php echo "<br /><br />"  ?-->
 
                         <!-- Listenelemente: Aufgaben -->
                         <ul data-role="listview" data-inset="true">
@@ -83,23 +82,23 @@
                                     echo '<li>';
                                             // Weiterleitung auf Aufgabe-Seite -> wird nicht mehr benötigt!
                                             // echo "<a href='givefb.php'>";  
-                                            // echo "</a>";
 
                                         // Aufgaben-Task
                                             // Name der Aufgabe aus DB auslesen 
                                             // Text (aus DB) wird ausgelesen
                                         echo "<a href='#". $data['a_name']."' data-rel='popup' data-position-to='window' data-transition='pop'>
                                                 <div>
-                                                    <div>
-                                                        <img src='img/p3.jpg'>
-                                                    </div>
                                                     <p><strong>". $data['a_name']."</strong><br></p>
+                                                    <div>
+                                                        <img width=100px src='".$data['a_image']."'>
+                                                    </div>
                                                     <p>". $data['a_inhalt']."</p>
                                                 </div>
                                             </a>";
                                             
                                         // Pop-Up 
                                             // Name der Aufgabe aus DB auslesen 
+                                            // -> Audio-Recording einfügen!
                                         echo "<div data-role='popup' id='". $data['a_name']."' data-overlay-theme='b' data-theme='a' class='ui-corner-all'>
                                             <p><strong>".$data['a_name']."</strong></br></p>
                                                <form method='post' action=".htmlspecialchars($_SERVER['PHP_SELF']).">Feedbackinhalt:
@@ -138,57 +137,6 @@
                     <!-- Navbar: 3 -->
                     <div id="three" class="tab-content ui-content" date-role="content">
                         <ul data-role="listview" data-inset="true">
-                            <li>
-                                <a href="#popupPeter" data-rel="popup" data-position-to="window" data-transition="pop">
-                                    <div>
-                                        <div>
-                                            <img src="img/p3.jpg">
-                                        </div>
-                                        <p><strong>Peter</strong><br></p>
-                                        <p>Which program for illustrating do<br>you recommend?</p>
-                                    </div>
-                                </a>
-                                <div data-role="popup" id="popupPeter" data-overlay-theme="b" data-theme="a" class="ui-corner-all">
-                                    <h1>Peter</h1>
-                                    <a ref="#pagetwo" data-role="button" data-icon="comment" data-iconpos="notext" data-inline="true"></a>
-                                    <img src="img/p3.jpg">
-                                    <p>Which program for illustrating do<br>you recommend?</p>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#popupSara" data-rel="popup" data-position-to="window" data-transition="pop">
-                                    <div>
-                                        <div>
-                                            <img src="img/p1.jpg">
-                                        </div>
-                                        <p><strong>Sara</strong><br></p>
-                                        <p>New Moodboard for my company!<br> What do you think?</p>
-                                    </div>
-                                </a>
-                                <div data-role="popup" id="popupSara" data-overlay-theme="b" data-theme="a" class="ui-corner-all">
-                                    <h1>Sara</h1>
-                                    <a ref="#pagetwo" data-role="button" data-icon="comment" data-iconpos="notext" data-inline="true"></a>
-                                    <img src="img/p1.jpg">
-                                    <p>New Moodboard for my company!<br> What do you think?</p>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#popupSusi" data-rel="popup" data-position-to="window" data-transition="pop">
-                                    <div>
-                                        <div>
-                                            <img src="img/p2.jpg">
-                                        </div>
-                                        <p><strong>Susi</strong><br></p>
-                                        <p>Don't know what to choose..<br> Please help!</p>
-                                    </div>
-                                </a>
-                                <div data-role="popup" id="popupSusi" data-overlay-theme="b" data-theme="a" class="ui-corner-all">
-                                    <h1>Susi</h1>
-                                    <a ref="#pagetwo" data-role="button" data-icon="comment" data-iconpos="notext" data-inline="true"></a>
-                                    <img src="img/p2.jpg">
-                                    <p>Don't know what to choose..<br> Please help!</p>
-                                </div>
-                            </li>
                         </ul>
                     </div>
                 </div>
