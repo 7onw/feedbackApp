@@ -35,7 +35,6 @@
          }
          
 ?>
-    
 
     <div data-role="page" id="pageone">
         <div data-role="header">
@@ -74,9 +73,25 @@
                                 while ($data = $MysqlStatement_select2->fetchArray()) { 
                                 echo '<li>';
                                     // Weiterleitung auf Aufgabe-Seite
-                                    echo "<a href='givefb.php'>"; 
+                                    //echo "<a href='givefb.php'>"; 
                                         echo $data['a_name'];
-                                    echo "</a>";
+                                    //echo "</a>";
+                                    
+                                    echo "<a href='#popupPeter' data-rel='popup' data-position-to='window' data-transition='pop'>
+                                            <div>
+                                                <div>
+                                                    <img src='img/p3.jpg'>
+                                                </div>
+                                                <p><strong>Peter</strong><br></p>
+                                                <p>Which program for illustrating do<br>you recommend?</p>
+                                            </div>
+                                        </a>
+                                        <div data-role='popup' id='popupPeter' data-overlay-theme='b' data-theme='a' class='ui-corner-all'>
+                                            <h1>Peter</h1>
+                                            <a ref='#pagetwo' data-role='button' data-icon='comment' data-iconpos='notext' data-inline='true'></a>
+                                            <img src='img/p3.jpg'>
+                                            <p>Which program for illustrating do<br>you recommend?</p>
+                                        </div>";
                                 echo '</li>';
                                 }
                             ?> 
@@ -85,7 +100,9 @@
                                 Feedbackinhalt:<input type="text" name="f_inhalt"><br>
                                 Akeren:<input type="radio" name="f_aktiv"><br>
                                 <button type="submit">Abschicken</button>
-                            </form>      
+                            </form>  
+
+
                         </ul>
                     </div>
                     <!-- Navbar: 3 -->
