@@ -85,7 +85,7 @@
                                                     <div>
                                                         <img src='img/p3.jpg'>
                                                     </div>
-                                                    <p><strong>"; echo $data['a_name']; echo "</strong><br></p>
+                                                    <p><strong>". $data['a_name']."</strong><br></p>
                                                     <p>Which program for illustrating do<br>you recommend?</p>
                                                 </div>";
                                         echo "</a>";
@@ -96,21 +96,26 @@
                                             // -> Foto einfügen!! (aus Webhost; Link in DB)!
                                         echo "<div data-role='popup' id='popupPeter' data-overlay-theme='b' data-theme='a' class='ui-corner-all'>
                                                 <h1>".$data['a_name']."</h1>
-                                                <img src='img/p3.jpg'>
-                                                <p>Which program?</p>";
-                                                
-                                        echo "</div>";
+                                                <form method='post' action=".htmlspecialchars($_SERVER['PHP_SELF']).">
+                                                    Feedbackinhalt:<input type='text' name='f_inhalt'><br>
+                                                    Aktivieren:<input type='radio' name='f_aktiv'><br>
+                                                    <button type='submit'>Abschicken</button>
+                                                </form>
+                                                </div>";
                                     echo '</li>';
                                 }
                             ?> 
                             
-                            <!--form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">Feedbackinhalt:
+                            <!--
+
+                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">Feedbackinhalt:
                             <input type="text" name="f_inhalt">
                                 <br>
                                 Aktivieren:<input type="radio" name="f_aktiv">
                                 <br>
                                 <button type="submit">Abschicken</button>
-                            </form-->  
+                            </form
+                        -->  
 
                         </ul>
                     </div>
