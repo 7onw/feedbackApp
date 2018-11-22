@@ -2,7 +2,7 @@ TO DO:
 
 - [ ] Bilder:
     - [x] Aufgaben-Task: Foto von Datenbank wird in "Aufgabe" geladen
-    - [ ] Foto wird von Webhost geladen; nur Link in DB
+    - [x] Foto wird von Webhost geladen; nur Link in DB
     - [ ] Pop-Up: Foto von Datenbank wird in "Aufgabe" geladen (aus Webhost; Link in DB eintragen) -> braucht es hier ein Foto?
 
 - [ ] Sound (!): 
@@ -11,3 +11,7 @@ TO DO:
 
 - [ ] Design:
     - [ ] CSS
+
+- [ ] Auswertung:
+    - [ ] wenn man Feedback bekommt, sollen Ergebnisse angezeigt werden
+    - [ ] Statistiken (?)
