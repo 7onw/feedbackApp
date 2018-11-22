@@ -2,9 +2,9 @@
 
 
 <?php
-include("PHP/connect.php");
-include("PHP/Mysql.class.php");
-include("PHP/MysqlStatement.class.php");
+    include("PHP/connect.php");
+    include("PHP/Mysql.class.php");
+    include("PHP/MysqlStatement.class.php");
 ?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -20,8 +20,8 @@ include("PHP/MysqlStatement.class.php");
 <div data-role="page" id="pageone">
     <div data-role="header">
         <h1>Feedback</h1>
-
     </div>
+</div>
 
 </body>
 </html>
