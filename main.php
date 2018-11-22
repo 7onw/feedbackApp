@@ -121,7 +121,7 @@
                                                         </audio>
                                                     </div>   
 
-                                                    <img src='images/mic.png' id='recordButton' class='recordOff'>
+                                                    <img width=100px src='images/mic.png' id='recordButton' class='recordOff'>
                                                     <span id='recordHelp'>Allow your microphone.</span>
                                                     <div id='recordContainer' class='startContainer'>
                                                         <div id='recordTime'> <span id='sw_m'>00</span>:<span id='sw_s'>00</span></div>
