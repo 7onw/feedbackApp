@@ -78,8 +78,7 @@
 
                                         // Aufgaben-Task
                                             // Name der Aufgabe aus DB auslesen 
-                                            // -> Text einfügen (aus DB)!
-                                            // -> Foto einfügen!! (aus Webhost; Link in DB)!
+                                            // Text (aus DB) wird ausgelesen
                                         echo "<a href='#". $data['a_name']."' data-rel='popup' data-position-to='window' data-transition='pop'>
                                                 <div>
                                                     <div>
@@ -92,22 +91,20 @@
                                             
                                         // Pop-Up 
                                             // Name der Aufgabe aus DB auslesen 
-                                            // -> Text einfügen (aus DB)!
-                                            // -> Foto einfügen!! (aus Webhost; Link in DB)!
                                         echo "<div data-role='popup' id='". $data['a_name']."' data-overlay-theme='b' data-theme='a' class='ui-corner-all'>
-                                                <p><strong>".$data['a_name']."</strong></br></p>
-                                                <form method='post' action=".htmlspecialchars($_SERVER['PHP_SELF']).">
-                                                    Feedbackinhalt:<input type='text' name='f_inhalt'><br>
-                                                    Aktivieren:<input type='radio' name='f_aktiv'><br>
+                                            <p><strong>".$data['a_name']."</strong></br></p>
+                                                <form method='post' action=".htmlspecialchars($_SERVER['PHP_SELF']).">Feedbackinhalt:
+                                                    <input type='text' name='f_inhalt'><br>Aktivieren:
+                                                    <input type='radio' name='f_aktiv'><br>
+                                                    <img src='images/mic.png' id='recordButton' class='recordOff'>
+                                                        <span id='recordHelp'>Allow your microphone.</span>
+                                                        <div id='recordContainer' class='startContainer'>
+                                                            <div id='recordTime'> <span id='sw_m'>00</span>:<span id='sw_s'>00</span></div>
+                                                            <div id='recordCircle' class='startRecord'><div id='recordText'>Record</div></div>
+                                                        </div>
                                                     <button type='submit'>Abschicken</button>
                                                 </form>
-                                                <img src='images/Microphone.png" id="recordButton" class="recordOff">
-                                                    <span id="recordHelp">Allow your microphone.</span>
-                                                    <div id="recordContainer" class="startContainer">
-                                                        <div id="recordTime"> <span id="sw_m">00</span>:<span id="sw_s">00</span></div>
-                                                        <div id="recordCircle" class="startRecord"><div id="recordText">Record</div></div>
-                                                    </div>
-                                                </div>";
+                                        </div>";
                                     echo '</li>';
                                 }
                             ?> 
