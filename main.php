@@ -63,45 +63,54 @@
                     </div>
                     <!-- Navbar: 2 -->
                     <div id="two" class="tab-content ui-content" date-role="content">
-                        <!--?php echo "<br /> SQL Statement: <br/>" . $MysqlStatement_select->sql; ?-->
-                        <!--?php echo "<br /> NUM: " . $MysqlStatement_select->num_rows; ?-->
-                        <!--?php echo "<br /><br />"  ?-->
+                            <!--?php echo "<br /> SQL Statement: <br/>" . $MysqlStatement_select->sql; ?-->
+                            <!--?php echo "<br /> NUM: " . $MysqlStatement_select->num_rows; ?-->
+                            <!--?php echo "<br /><br />"  ?-->
 
                         <!-- Listenelemente: Aufgaben -->
                         <ul data-role="listview" data-inset="true">
                             <?php
                                 while ($data = $MysqlStatement_select2->fetchArray()) { 
-                                echo '<li>';
-                                    // Weiterleitung auf Aufgabe-Seite
-                                    //echo "<a href='givefb.php'>"; 
-                                        echo $data['a_name'];
-                                    //echo "</a>";
-                                    
-                                    echo "<a href='#popupPeter' data-rel='popup' data-position-to='window' data-transition='pop'>
-                                            <div>
+                                    echo '<li>';
+                                            // Weiterleitung auf Aufgabe-Seite -> wird nicht mehr benötigt!
+                                            // echo "<a href='givefb.php'>";  
+                                            // echo "</a>";
+
+                                        // Aufgaben-Task
+                                            // Name der Aufgabe aus DB auslesen 
+                                            // -> Text einfügen (aus DB)!
+                                            // -> Foto einfügen!! (aus Webhost; Link in DB)!
+                                        echo "<a href='#popupPeter' data-rel='popup' data-position-to='window' data-transition='pop'>
                                                 <div>
-                                                    <img src='img/p3.jpg'>
-                                                </div>
-                                                <p><strong>Peter</strong><br></p>
-                                                <p>Which program for illustrating do<br>you recommend?</p>
-                                            </div>
-                                        </a>
-                                        <div data-role='popup' id='popupPeter' data-overlay-theme='b' data-theme='a' class='ui-corner-all'>
-                                            <h1>Peter</h1>
-                                            <a ref='#pagetwo' data-role='button' data-icon='comment' data-iconpos='notext' data-inline='true'></a>
-                                            <img src='img/p3.jpg'>
-                                            <p>Which program for illustrating do<br>you recommend?</p>
-                                        </div>";
-                                echo '</li>';
+                                                    <div>
+                                                        <img src='img/p3.jpg'>
+                                                    </div>
+                                                    <p><strong>"; echo $data['a_name']; echo "</strong><br></p>
+                                                    <p>Which program for illustrating do<br>you recommend?</p>
+                                                </div>";
+                                        echo "</a>";
+                                            
+                                        // Pop-Up 
+                                            // Name der Aufgabe aus DB auslesen 
+                                            // -> Text einfügen (aus DB)!
+                                            // -> Foto einfügen!! (aus Webhost; Link in DB)!
+                                        echo "<div data-role='popup' id='popupPeter' data-overlay-theme='b' data-theme='a' class='ui-corner-all'>
+                                                <h1>".$data['a_name']."</h1>
+                                                <img src='img/p3.jpg'>
+                                                <p>Which program?</p>";
+                                                
+                                        echo "</div>";
+                                    echo '</li>';
                                 }
                             ?> 
                             
-                            <!--form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                                Feedbackinhalt:<input type="text" name="f_inhalt"><br>
-                                Akeren:<input type="radio" name="f_aktiv"><br>
+                            <!--form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">Feedbackinhalt:
+                            <input type="text" name="f_inhalt">
+                                <br>
+                                Aktivieren:<input type="radio" name="f_aktiv">
+                                <br>
                                 <button type="submit">Abschicken</button>
                             </form-->  
-
 
                         </ul>
                     </div>
