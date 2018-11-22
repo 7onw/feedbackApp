@@ -1,0 +1,39 @@
+audio{display:none}
+    .audioContainer
+{
+    height:50px;width:250px;
+    border:solid 1px #dedede;
+    position:relative;
+}
+
+.audioProgress
+{
+    height:50px;float:left;background-color:#f2f2f2;z-index:800
+}
+
+.audioControl
+{
+    position: absolute;float:left;width:52px;height:48px;;
+}
+
+.audioTime
+{
+    position: absolute;width: 45px;height: 20px;margin-left:199px;float:right;
+}
+
+.audioBar
+{
+    height: 3px;
+    background-color: #cc0000;
+    position: absolute;width: 147px;margin-left: 53px;
+}
+
+.audioPlay
+{
+    background:url('../images/play.png') no-repeat
+} 
+
+.audioPause
+{
+    background:url('../images/pause.png') no-repeat
+}

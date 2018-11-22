@@ -15,11 +15,8 @@
     <script src="js/jquery.stopwatch.js"></script> //Jquery Stop Watch
     <script src="recorder.js"></script>
     <script type="text/javascript">
-    $(document).ready(function(){
-        -----
-        -----
-        -----
-    });
+        $(document).ready(function(){   
+        });
     </script>
     
     <title>Feedback-App</title>
