@@ -111,18 +111,6 @@
                                     echo '</li>';
                                 }
                             ?> 
-                            
-                            <!--
-
-                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">Feedbackinhalt:
-                            <input type="text" name="f_inhalt">
-                                <br>
-                                Aktivieren:<input type="radio" name="f_aktiv">
-                                <br>
-                                <button type="submit">Abschicken</button>
-                            </form
-                        -->  
-
                         </ul>
                     </div>
                     <!-- Navbar: 3 -->
