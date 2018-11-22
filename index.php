@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-
 <?php
-include("PHP/connect.php");
-include("PHP/Mysql.class.php");
-include("PHP/MysqlStatement.class.php");
+	include("PHP/connect.php");
+	include("PHP/Mysql.class.php");
+	include("PHP/MysqlStatement.class.php");
 ?>
 
 <html>
@@ -18,44 +17,39 @@ include("PHP/MysqlStatement.class.php");
 	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<title>FeedbackApp</title>
 </head>
+
 <body>
-
 	<?php
-
-$Mysql = new Mysql();
-
-
-$sql = "SELECT * FROM users WHERE name=:0 AND pw=:1";
-$sqlAufgaben = "SELECT * FROM aufgaben WHERE a_aktiv = true";
-$MysqlStatement_select = $Mysql->getMysqlStatement($sql);
-$MysqlStatement_select->execute($_POST[name], $_POST[pw]); 
-$pw = $_POST['pw'];
-$user = $_POST['name'];   
-?>
-
-<div data-role="page" id="pageone">
-	<div data-role="header">
-		<h1>Login</h1>
-
-	</div>
-
-	<div data-role="main" class="ui-content">
-		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
-			Name: <input type="text" name="name"><br>
-			PW: <input type="text" name="pw"><br>
-			<input type="submit" value="Login">
-		</form>
-	</div>
-	<?php
-		if($MysqlStatement_select->num_rows >= 1)
-		{
-				header("Location: http://localhost/feedback/feedbackApp/main.php");
-		exit();
-		}
+		$Mysql = new Mysql();
+		$sql = "SELECT * FROM users WHERE name=:0 AND pw=:1";
+		$sqlAufgaben = "SELECT * FROM aufgaben WHERE a_aktiv = true";
+		$MysqlStatement_select = $Mysql->getMysqlStatement($sql);
+		$MysqlStatement_select->execute($_POST[name], $_POST[pw]); 
+		$pw = $_POST['pw'];
+		$user = $_POST['name'];   
 	?>
-</div>
 
+	<div data-role="page" id="pageone">
+		<div data-role="header">
+			<h1>Login</h1>
+		</div>
 
+		<div data-role="main" class="ui-content">
+			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
+				Name: <input type="text" name="name"><br>
+				PW: <input type="text" name="pw"><br>
+				<input type="submit" value="Login">
+			</form>
+		</div>
+
+		<?php
+			if($MysqlStatement_select->num_rows >= 1)
+			{
+					header("Location: http://localhost/feedback/feedbackApp/main.php");
+			exit();
+			}
+		?>
+	</div>
 </body>
 </html>
 

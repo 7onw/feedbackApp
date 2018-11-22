@@ -32,9 +32,8 @@
             $MysqlStatement_insert->execute($_POST[f_inhalt], $_POST[f_aktiv], 2); 
             echo"bin im if";
             echo $MysqlStatement_insert->sql;
-         }
-         
-?>
+         }      
+    ?>
 
     <div data-role="page" id="pageone">
         <div data-role="header">
@@ -58,6 +57,7 @@
                             <a ref="#pagetwo" data-role="button" data-icon="camera" data-iconpos="notext" data-inline="true"></a>
                             <div>
                                 <a href="#pagetwo" data-role="button" data-icon="arrow-u" data-iconpos="left" data-inline="true" id="upload-button">Upload</a>
+                                <button onClick="printSomeThing();" class="buttonBlack">neue Aufgabe</button>
                             </div>
                         </div>
                     </div>
@@ -96,11 +96,11 @@
                                 }
                             ?> 
                             
-                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                            <!--form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                                 Feedbackinhalt:<input type="text" name="f_inhalt"><br>
                                 Akeren:<input type="radio" name="f_aktiv"><br>
                                 <button type="submit">Abschicken</button>
-                            </form>  
+                            </form-->  
 
 
                         </ul>
@@ -162,12 +162,7 @@
                         </ul>
                     </div>
                 </div>
+        </div>
     </div>
-
-
-
-        <button onClick="printSomeThing();" class="buttonBlack">neue Aufgabe</button>
-    </div>
-
 </body>
 </html>
