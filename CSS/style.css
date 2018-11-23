@@ -1,39 +1,233 @@
-audio{display:none}
-    .audioContainer
-{
-    height:50px;width:250px;
-    border:solid 1px #dedede;
-    position:relative;
+/* ----- Font ----- */
+@font-face {
+    font-family: OpenSansCondensed;
+    src: url(../font/OpenSansCondensed-Light.ttf);
 }
 
-.audioProgress
-{
-    height:50px;float:left;background-color:#f2f2f2;z-index:800
+
+/* ----- Body ----- */
+body, body * {
+	font-family: OpenSansCondensed !important;
+	letter-spacing: 0.1em !important;
+}
+h1 {
+	text-transform: uppercase;
+	letter-spacing: 0.25em !important;
 }
 
-.audioControl
-{
-    position: absolute;float:left;width:52px;height:48px;;
+
+/* ----- Navbar ----- */
+[data-role="navbar"] {
+	margin-top: -35px; 
+	position: fixed; 
+	width: 100%; 
+	height: 30px; 
+	z-index: 100;
+}
+[data-role="navbar"] a {
+	background-color: transparent !important;
+	color: white !important;
+	opacity: 0.5;
+}
+[data-role="tabs"] {
+	padding: 0em !important;
 }
 
-.audioTime
-{
-    position: absolute;width: 45px;height: 20px;margin-left:199px;float:right;
+
+/* ----- UI Page Theme ----- */
+/* Hintergrund */
+.ui-page {
+	background-image:url(../images/bg.jpg);
+	background-size:cover; 
 }
 
-.audioBar
-{
-    height: 3px;
-    background-color: #cc0000;
-    position: absolute;width: 147px;margin-left: 53px;
+.ui-content {
+    padding: 0em !important;
 }
 
-.audioPlay
-{
-    background:url('../images/play.png') no-repeat
-} 
-
-.audioPause
-{
-    background:url('../images/pause.png') no-repeat
+/* Balken ganz oben */
+.ui-page-theme-a .ui-bar-inherit {
+	background-color: #0000 !important;
+	color: #f1f1f1 !important;
 }
+
+/* Icons */
+.ui-noback-icon, .ui-noback-icon a  {
+	text-transform: uppercase;
+	background-color: transparent !important;
+	color: white !important;
+}
+
+/* NavBar */
+    /* Shadow */
+    .ui-page-theme-a .ui-btn.ui-btn-active {
+        background-color: #F6F6F6 !important;
+        color: black !important;
+        border-color: #4a5152 !important;
+        box-shadow: 0 0 3px #d6d6d6 !important;
+        opacity: 1 !important;
+    }
+    /* NavBar: Tab-Inhalt */
+    .tab-content {
+        text-align: center;
+        margin-top: 35px !important;
+        margin-bottom: 45px;
+    }
+    .tab-content img {
+	    width: 80%
+    }
+        /* NavBar: Tab-Inhalt 1 */
+            /* Kreis-Animation */
+            .circle-container {
+                width: 100%;
+                height: 400px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                position: relative;
+            }
+            .circle {
+                border-radius: 50%;
+                background-color: #F6F6F611 !important;
+                width: 150px;
+                height: 150px;
+                position: absolute;
+                opacity: 0;
+                animation: scaleIn 6s infinite ease-out;
+            }
+            .circle > * {
+                margin-top: 50px
+            }
+            @keyframes scaleIn {
+                from {
+                  transform: scale(.5, .5);
+                  opacity: .5;
+                }
+                to {
+                  transform: scale(2.5, 2.5);
+                  opacity: 0;
+                }
+              }
+        /* NavBar: Tab-Inhalt 2 */
+            /* Aufgaben */
+            #two li > a > div > div {
+                width: 30%;
+                float: left
+            }
+            #two li > p {
+                margin-left: 35%
+            }
+            .ui-listview > li p {
+	            padding-top: 2%;
+            }
+
+            /* ----- Pop-Up ----- */
+            [data-role="popup"] h1 {
+                margin: 0px;
+                margin-top: 10px;
+                display: inline-block;
+            }
+            [data-role="popup"] a {
+                float: right;
+                margin-right: 0px;
+            }
+            [data-role="popup"] img {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                width: 100%;
+            }
+            [data-role="popup"] p {
+                text-align: center;
+            }
+            [data-role="popup"] {
+                max-width:350px;
+                padding: 10px 20px;
+            }
+
+            /* ----- Recording ----- */
+            audio{display:none} .audioContainer {
+                height:50px;width:250px;
+                border:solid 1px #dedede;
+                position:relative;
+            }
+            .audioProgress {
+                height:50px;float:left;background-color:#f2f2f2;z-index:800
+            }
+            .audioControl {
+                position: absolute;float:left;width:52px;height:48px;;
+            }
+            .audioTime {
+                position: absolute;width: 45px;height: 20px;margin-left:199px;float:right;
+            }
+            .audioBar {
+                height: 3px;
+                background-color: #cc0000;
+                position: absolute;width: 147px;margin-left: 53px;
+            }
+            .audioPlay {
+                background:url('../images/play.png') no-repeat
+            } 
+            .audioPause {
+                background:url('../images/pause.png') no-repeat
+            }
+        
+        /* NavBar: Tab-Inhalt 3 */
+
+/* ----- Footer ----- */
+[data-role="footer"] {
+	position: fixed !important; 
+	width: 100%; 
+	height: 40px; 
+    text-align:center; 
+	z-index: 100;
+	bottom: 0px;
+	font-size: 0.5em;
+	letter-spacing: 0.5em !important;
+    display:table;
+}
+[data-role="footer"] .ui-title {
+	display:table-cell !important; 
+	vertical-align:middle;
+}
+
+
+
+/*#one > div {
+	padding-top: 15px;
+	display: inline-block;
+	width: 100%
+}
+
+#one > div > a {
+	margin-bottom: 100px;
+	margin-top: 0px;
+	font-family: OpenSansCondensed;
+	margin-right: 0px;
+}*/
+
+/*
+#three li > a > div > div {
+	width: 30%;
+	float: left
+}
+
+#three li > p {
+	margin-left: 35%
+}*/
+
+
+/* ----- Header ----- */
+/*[data-role="header"] {
+	position: fixed; 
+	width: 100%; 
+	height: 50px; 
+	z-index: 100;
+    display:table;
+    text-align:center; 
+}
+
+[data-role="header"] .ui-title {
+	display:table-cell; 
+	vertical-align:middle
+}*/
