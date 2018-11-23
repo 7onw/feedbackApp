@@ -19,6 +19,7 @@
 	</head>
 
 	<body>
+		<!-- Passwort und Username aus DB auslesen -->
 		<?php
 			if(isset($_POST['name']) && isset($_POST['pw'])) {
 				$Mysql = new Mysql();
@@ -29,32 +30,41 @@
 				$user = $_POST['name'];   
 			}
 		?>
-
+		<!-- Seite 1: Login -->
 		<div data-role="page" id="pageone">
 			<div data-role="header">
-				<h1>Login</h1>
+				<h1>Feedback-Login</h1>
 			</div>
 
+			<!-- Main-Content -->
 			<div data-role="main" class="ui-content">
-				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
-					Name: <input type="text" name="name"><br>
-					PW: <input type="text" name="pw"><br>
-					<input type="submit" value="Login">
+				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+					<input type="text" name="name" placeholder="Username" class="padding-textbox"><br>
+					<input type="password" name="pw" placeholder="Passwort" class="padding-textbox"><br>
+					<div class="ui-nodisc-icon ui-noback-icon" id="login-button">
+						<!--button type="submit" value="Login" id="login-button">Login</button-->
+						<a href="javascript:;" onclick="parentNode.parentNode.submit();" data-role="button" data-inline="true">Login</a>
+					</div>
 				</form>
 			</div>
 
+			<!-- Passwort und Username aus DB vergleichen & wenn Richtig: Weiterleiten -->
 			<?php
 				if(isset($MysqlStatement_select) && $MysqlStatement_select->num_rows >= 1 || (isset( $_SESSION['user'] ) && ($_SESSION['user'] == $user + password_hash($pw, PASSWORD_DEFAULT))))
 				{
 					$_SESSION['user'] = $user + password_hash($pw, PASSWORD_DEFAULT);
+					$data = $MysqlStatement_select->fetchArray();
+					$_SESSION['user_id'] = $data["ID_user"];
+					$_SESSION['user_name'] = $user;
 					header("Location: index.php");
 				exit();
 				}
 			?>
+			<!-- Footer -->
+			<div data-role="footer">
+        		<h3>© Sara Unteregger & Simon Wünscher</h3>
+    		</div>
 		</div>
-        <div data-role="footer">
-            <h3>© Sara Unteregger & Simon Wünscher</h3>
-        </div>
 	</body>
 </html>
 

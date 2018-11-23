@@ -14,11 +14,13 @@ h1 {
 	text-transform: uppercase;
 	letter-spacing: 0.25em !important;
 }
-
+[data-role="page"] {
+    min-height: 812px;
+}
 
 /* ----- Navbar ----- */
 [data-role="navbar"] {
-	margin-top: -35px; 
+	margin-top: -36px; 
 	position: fixed; 
 	width: 100%; 
 	height: 30px; 
@@ -33,6 +35,21 @@ h1 {
 	padding: 0em !important;
 }
 
+.padding-textbox {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+}
+
+#login-button {
+    display: grid;
+    margin-top: 15%;
+}
+
+#login-button > a {
+    width: 50%;
+    margin: auto;
+}
+
 
 /* ----- UI Page Theme ----- */
 /* Hintergrund */
@@ -45,17 +62,48 @@ h1 {
     padding: 0em !important;
 }
 
+.ui-content form {
+    margin: 10%;
+    opacity: 0.85;
+    padding-top: 13%;
+}
+
+.ui-content > form > p {
+    color: #f1f1f1;
+    opacity: 0.6;
+    margin: 2%;
+}
+
 /* Balken ganz oben */
 .ui-page-theme-a .ui-bar-inherit {
 	background-color: #0000 !important;
-	color: #f1f1f1 !important;
+    color: #f1f1f1 !important;
 }
 
-/* Icons */
+.ui-page-theme-a .ui-btn {
+    /*margin: 20%;*/
+}
+
+.ui-btn .ui-input-btn .ui-corner-all .ui-shadow {
+    background-color: none !important;
+}
+
+/* Buttons */
 .ui-noback-icon, .ui-noback-icon a  {
 	text-transform: uppercase;
 	background-color: transparent !important;
 	color: white !important;
+}
+
+.button-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+}
+
+.collapsed {
+    visibility: collapse;
+    height: 0px !important;
 }
 
 /* NavBar */
@@ -77,10 +125,26 @@ h1 {
 	    width: 80%
     }
         /* NavBar: Tab-Inhalt 1 */
+            #hidden-upload-form {
+                visibility: collapse;
+            }
+            #circles-div {
+                height: 400px;
+            }
+            #image-div > img {
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center; 
+                width: 0;
+                height: 0;
+                padding-top: 100%;
+                padding-left: 100%
+            }
+
             /* Kreis-Animation */
             .circle-container {
                 width: 100%;
-                height: 400px;
+                height: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -178,33 +242,23 @@ h1 {
 [data-role="footer"] {
 	position: fixed !important; 
 	width: 100%; 
-	height: 40px; 
-    text-align:center; 
+	height: 30px; 
+    text-align: center; 
 	z-index: 100;
 	bottom: 0px;
-	font-size: 0.5em;
+	font-size: 0.6em;
 	letter-spacing: 0.5em !important;
-    display:table;
+    display: table;
+    opacity: 0.6;
 }
 [data-role="footer"] .ui-title {
 	display:table-cell !important; 
-	vertical-align:middle;
+	vertical-align:middle !important;
 }
 
-
-
-/*#one > div {
-	padding-top: 15px;
-	display: inline-block;
-	width: 100%
+#one > div > a, #one > div > div > a {
+	margin: 20px 0px 0px 0px;
 }
-
-#one > div > a {
-	margin-bottom: 100px;
-	margin-top: 0px;
-	font-family: OpenSansCondensed;
-	margin-right: 0px;
-}*/
 
 /*
 #three li > a > div > div {
