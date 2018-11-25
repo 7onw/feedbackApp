@@ -87,8 +87,8 @@
                             </div>
                             <div id="image-div" class="collapsed">
                                 <img id="uploaded-image">
-                                <input type="text" id="upload-name">
-                                <input type="text" id="upload-description">
+                                <input type="text" id="upload-name" placeholder="Titel">
+                                <input type="text" id="upload-description" placeholder="Projektbeschreibung">
                             </div>
                             <a href="javascript:;" onclick="submitTask(this)" data-role="button" data-icon="arrow-u" data-iconpos="notext" data-inline="true" id="submit-button" class="button-disabled"></a>
                             <div>
@@ -134,7 +134,7 @@
                                         echo "<div data-role='popup' id='". $data['a_name']."' data-overlay-theme='b' data-theme='a' class='ui-corner-all'>
                                             <p><strong>".$data['a_name']."</strong></br></p>
                                                <form method='post' action=".htmlspecialchars($_SERVER['PHP_SELF']).">Feedbackinhalt:
-                                                    <input type='text' name='f_inhalt'><br>Aktivieren:
+                                                    <input placeholder='Text eingeben' type='text' name='f_inhalt'><br>Aktivieren:
                                                     <input type='radio' name='f_aktiv'><br>
                                                     <button type='submit'>Abschicken</button>
 
