@@ -110,10 +110,14 @@
                         <!-- Listenelemente: Aufgaben -->
                         <ul data-role="listview" data-inset="true">
                             <?php
-                                $sqlAufgaben = "SELECT * FROM aufgaben"; /*--> TODO: WHERE a_aktiv = 1 */
+                                $sqlAufgaben = "SELECT * FROM aufgaben WHERE a_aktiv=1"; /*--> TODO: WHERE a_aktiv = 1; keine Ahnung wegen der schreibweise */
                                 $MysqlStatement_select2 = $Mysql->getMysqlStatement($sqlAufgaben);
                                 $MysqlStatement_select2->execute(); 
                                 while ($data = $MysqlStatement_select2->fetchArray()) { 
+                                    $dataID = $data['a_name'];
+                                    $dataID = str_replace(" ", "_", $dataID);
+                                    $dataID = preg_replace("/[^A-Za-z0-9_]/", '', $dataID);
+
                                     echo '<li>';
                                             // Weiterleitung auf Aufgabe-Seite -> wird nicht mehr benötigt!
                                             // echo "<a href='givefb.php'>";  
@@ -121,7 +125,7 @@
                                         // Aufgaben-Task
                                             // Name der Aufgabe aus DB auslesen 
                                             // Text (aus DB) wird ausgelesen
-                                        echo "<a href='#". $data['a_name']."' data-rel='popup' data-position-to='window' data-transition='pop'>
+                                        echo "<a href='#". $dataID."' data-rel='popup' data-position-to='window' data-transition='pop'>
                                                 <div>
                                                     <p><strong>". $data['a_name']."</strong><br></p>
                                                     <div>
@@ -133,7 +137,7 @@
                                             
                                         // Pop-Up 
                                             // Name der Aufgabe aus DB auslesen 
-                                        echo "<div data-role='popup' id='". $data['a_name']."' data-overlay-theme='b' data-theme='a' class='ui-corner-all'>
+                                        echo "<div data-role='popup' id='". $dataID."' data-overlay-theme='b' data-theme='a' class='ui-corner-all'>
                                             <p><strong>".$data['a_name']."</strong></br></p>
                                                <form method='post' action=".htmlspecialchars($_SERVER['PHP_SELF']).">
                                                     <textarea rows='4' cols='50' maxlength='400' type='text' placeholder='Feedbackinhalt'></textarea>
