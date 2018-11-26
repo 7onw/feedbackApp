@@ -87,8 +87,11 @@
                             </div>
                             <div id="image-div" class="collapsed">
                                 <img id="uploaded-image">
-                                <input type="text" id="upload-name" placeholder="Titel">
-                                <input type="text" id="upload-description" placeholder="Projektbeschreibung">
+                                <div class="upload-textbox">
+                                    <input type="text" id="upload-name" placeholder="Titel">
+                                    <!--input type="text" id="upload-description" placeholder="Projektbeschreibung"-->
+                                    <textarea rows="4" cols="50" maxlength="400" type="text" id="upload-description" placeholder="Projektbeschreibung"></textarea>
+                                </div>
                             </div>
                             <a href="javascript:;" onclick="submitTask(this)" data-role="button" data-icon="arrow-u" data-iconpos="notext" data-inline="true" id="submit-button" class="button-disabled"></a>
                             <div>
@@ -107,7 +110,7 @@
                         <!-- Listenelemente: Aufgaben -->
                         <ul data-role="listview" data-inset="true">
                             <?php
-                                $sqlAufgaben = "SELECT * FROM aufgaben";
+                                $sqlAufgaben = "SELECT * FROM aufgaben"; /*--> TODO: WHERE a_aktiv = 1 */
                                 $MysqlStatement_select2 = $Mysql->getMysqlStatement($sqlAufgaben);
                                 $MysqlStatement_select2->execute(); 
                                 while ($data = $MysqlStatement_select2->fetchArray()) { 
@@ -124,20 +127,17 @@
                                                     <div>
                                                         <img width=100px src='".$data['a_image']."'>
                                                     </div>
-                                                    <p>". $data['a_inhalt']."</p>
+                                                    <p id='text-inhalt'>". $data['a_inhalt']."</p>
                                                 </div>
                                             </a>";
                                             
                                         // Pop-Up 
                                             // Name der Aufgabe aus DB auslesen 
-                                            // -> Audio-Recording einfügen!
                                         echo "<div data-role='popup' id='". $data['a_name']."' data-overlay-theme='b' data-theme='a' class='ui-corner-all'>
                                             <p><strong>".$data['a_name']."</strong></br></p>
-                                               <form method='post' action=".htmlspecialchars($_SERVER['PHP_SELF']).">Feedbackinhalt:
-                                                    <input placeholder='Text eingeben' type='text' name='f_inhalt'><br>Aktivieren:
-                                                    <input type='radio' name='f_aktiv'><br>
-                                                    <button type='submit'>Abschicken</button>
-
+                                               <form method='post' action=".htmlspecialchars($_SERVER['PHP_SELF']).">
+                                                    <textarea rows='4' cols='50' maxlength='400' type='text' placeholder='Feedbackinhalt'></textarea>
+                                                    <br>
                                                     <div class='audioContainer'>
                                                         <div class='audioProgress' id='audioProgress10'' style='width:0px'>
                                                         </div>
@@ -152,13 +152,13 @@
                                                             <source>
                                                         </audio>
                                                     </div>   
-
                                                     <img width=100px src='images/mic.png' id='recordButton' class='recordOff'>
                                                     <span id='recordHelp'>Allow your microphone.</span>
                                                     <div id='recordContainer' class='startContainer'>
                                                         <div id='recordTime'> <span id='sw_m'>00</span>:<span id='sw_s'>00</span></div>
                                                         <div id='recordCircle' class='startRecord'><div id='recordText'>Record</div></div>
                                                     </div>
+                                                    <button type='submit'>Abschicken</button>
                                                 </form>
                                         </div>";
                                     echo '</li>';
@@ -169,6 +169,7 @@
                     <!-- Navbar: 3 -->
                     <div id="three" class="tab-content ui-content" date-role="content">
                         <ul data-role="listview" data-inset="true">
+                            <!--  TODO: SELECT * FROM user aufgaben (meine aufgaben) -> welche Tabelle ist das? -->
                         </ul>
                     </div>
                 </div>

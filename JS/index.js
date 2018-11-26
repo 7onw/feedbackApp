@@ -81,7 +81,7 @@ function changeimg(str) {
 function resetTabOne() {
 	$("#circles-div").removeClass("collapsed");
 	$("#image-div").addClass("collapsed");
-	$('#upload-button').removeClass("button-disabled").focus();
+	$('#upload-button').removeClass("button-disabled").focus();	
 	$('#submit-button').addClass("button-disabled");
 	$("#uploaded-image").css({"background-image": ""});
 	document.getElementById("hidden-upload-form").reset();
