@@ -31,10 +31,25 @@ $(document).on("popupafteropen", "div[data-role='popup']", function(e,ui) {
 var fileToUpload;
 
 function submitTask(e) {
+	var uploadName = $("#upload-name").val();
+	var uploadDesc = $("#upload-description").val();
+
+	if(uploadName == null || uploadName.length <= 0) {
+		$("#upload-name").css("border", "2px solid red");
+		return;
+	}
+	else if(uploadDesc == null || uploadDesc.length <= 0) {
+		$("#upload-name").css("border", "0px");
+		$("#upload-description").css("border", "2px solid red");
+		return;
+	}
+	$("#upload-name").css("border", "0px");
+	$("#upload-description").css("border", "0px");
+
 	var form_data = new FormData();                  
 	form_data.append('file', fileToUpload);    
-	form_data.append('name', $("#upload-name").val());   
-	form_data.append('description', $("#upload-description").val());     
+	form_data.append('name', uploadName);   
+	form_data.append('description', uploadDesc);     
     $.ajax({
         url: 'upload.php',
         dataType: 'text',
@@ -81,7 +96,7 @@ function changeimg(str) {
 function resetTabOne() {
 	$("#circles-div").removeClass("collapsed");
 	$("#image-div").addClass("collapsed");
-	$('#upload-button').removeClass("button-disabled").focus();
+	$('#upload-button').removeClass("button-disabled").focus();	
 	$('#submit-button').addClass("button-disabled");
 	$("#uploaded-image").css({"background-image": ""});
 	document.getElementById("hidden-upload-form").reset();
