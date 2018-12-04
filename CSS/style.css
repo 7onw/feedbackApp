@@ -185,11 +185,11 @@ h1 {
               }
         /* NavBar: Tab-Inhalt 2 */
             /* Aufgaben */
-            #two li > a > div > div {
+            #two li > a > div > div, #three li > a > div > div {
                 width: 30%;
                 float: left;
             }
-            #two li > p {
+            #two li > p, #three li > p {
                 margin-left: 35%
             }
             .ui-listview > li p {
@@ -223,12 +223,17 @@ h1 {
                 max-width:350px;
                 padding: 10px 20px;
             }
+            [data-role="popup"] ul {
+                list-style-type: none;
+                padding-left: 0px;
+            }
 
             /* ----- Recording ----- */
             audio{display:none} .audioContainer {
                 height:50px;width:250px;
                 border:solid 1px #dedede;
                 position:relative;
+                margin-bottom: 5px;
             }
             .audioProgress {
                 height:50px;float:left;background-color:#f2f2f2;z-index:800
@@ -237,18 +242,53 @@ h1 {
                 position: absolute;float:left;width:52px;height:48px;;
             }
             .audioTime {
-                position: absolute;width: 45px;height: 20px;margin-left:199px;float:right;
+                position: absolute;
+                width: 45px;
+                height: 20px;
+                right: 0px;
+                float: right;
+                color: #c8d0d1;
             }
-            .audioBar {
-                height: 3px;
-                background-color: #cc0000;
-                position: absolute;width: 147px;margin-left: 53px;
+            .audioTimestamp {
+                height: 100%;
+                position: absolute;
+                width: 147px;
+                margin-left: 53px;
             }
             .audioPlay {
-                background:url('../images/play.png') no-repeat
+                background:url('../images/play.png');
+                background-size:     contain;
+                background-repeat:   no-repeat;
+                background-position: center center; 
             } 
             .audioPause {
-                background:url('../images/pause.png') no-repeat
+                background:url('../images/pause.png');
+                background-size:     contain;
+                background-repeat:   no-repeat;
+                background-position: center center; 
+            }
+            .recordAudioTime {
+                text-align: center;
+            }
+
+            .recordAudioButton {
+                margin: auto !important;
+                width: auto !important;
+                margin-top: 15% !important;
+            }
+            #popup-line {
+                height: 1px;
+                background-color: #dddddd;
+                margin-bottom: 10%;
+                margin-top: 5%;
+            }
+            .popup-info-aufnahme {
+                font-size: small;
+                opacity: 0.5;
+            }
+            .popup-info-senden {
+                font-size: small;
+                opacity: 0.5;
             }
         
         /* NavBar: Tab-Inhalt 3 */
