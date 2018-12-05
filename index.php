@@ -77,7 +77,7 @@
                                 </div>
                                 <div>Select<br>Image</div>
                             </div>
-                            
+
                             <!-- Neue Aufgabe erstellen -->
                             <div id="image-div" class="collapsed">
                                 <!-- Bild wird angezeigt -->
@@ -136,7 +136,7 @@
                                                     <div>
                                                         <img width=100px src='" . $data['a_image'] . "'>
                                                     </div>
-                                                    <p>$owner</p>
+                                                    <p id='text-name-user'>$owner</p>
                                                     <p id='text-inhalt'>" . $data['a_inhalt'] . "</p>
                                                 </div>
                                             </a>";

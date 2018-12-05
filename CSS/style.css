@@ -205,6 +205,9 @@ h1 {
             #text-inhalt {
                 font-size: 0.75em !important;
             }
+            #text-name-user {
+                opacity: 0.2;
+            }
 
             /* ----- Pop-Up ----- */
             [data-role="popup"] h1 {
