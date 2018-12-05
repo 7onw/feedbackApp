@@ -132,6 +132,10 @@ h1 {
     .tab-content img {
 	    width: 80%
     }
+    #hellotext {
+        margin-top: 20% !important; 
+        margin-bottom: 2% !important;
+    }
         /* NavBar: Tab-Inhalt 1 */
             #hidden-upload-form {
                 /*visibility: collapse;*/
