@@ -61,8 +61,10 @@
 
                     <!-- Navbar: #one Upload -->
                     <div id="one" class="tab-content ui-content" date-role="content">
-                    	<div id="hellotext"><h2>Hallo <?php echo $_SESSION['user_name']; ?>!</h2></div>
                         <div class="ui-nodisc-icon ui-noback-icon">
+                        <div id="hellotext">
+                                <p>Hallo, <?php echo $_SESSION['user_name']; ?>!</p>
+                            </div>
                             <!-- Circle Animation -->
                             <div id="circles-div" class="circle-container">
                                 <div class="circle white" style="animation-delay: -6s">

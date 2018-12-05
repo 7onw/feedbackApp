@@ -134,7 +134,8 @@ h1 {
     }
     #hellotext {
         margin-top: 20% !important; 
-        margin-bottom: 2% !important;
+        color: #F6F6F6;
+        opacity: 0.5;
     }
         /* NavBar: Tab-Inhalt 1 */
             #hidden-upload-form {
