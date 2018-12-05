@@ -244,7 +244,10 @@
             </div>
             <!-- Footer -->
             <div data-role="footer">
-                <h3>© Sara Unteregger & Simon Wünscher | <a href="logout.php">logout</a></h3>
+                <h3>© Sara Unteregger & Simon Wünscher | <a href="logout.php">logout</a></h3> 
+                <?php
+                    echo $_SESSION['user_name'];
+                ?>
             </div>
             <!-- /Footer -->
         </div>
