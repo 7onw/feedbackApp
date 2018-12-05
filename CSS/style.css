@@ -241,7 +241,8 @@ h1 {
                 height:50px;width:250px;
                 border:solid 1px #dedede;
                 position:relative;
-                margin-bottom: 5px;
+                margin-bottom: 5%;
+                margin-top: 2%;
             }
             .audioProgress {
                 height:50px;float:left;background-color:#f2f2f2;z-index:800

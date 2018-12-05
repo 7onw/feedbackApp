@@ -218,7 +218,7 @@
                                     $MysqlStatement_select4->execute($creatorID);
                                     while ($data3 = $MysqlStatement_select4->fetchArray()) {
                                         $creator = $data3['name'];
-                                        echo "<b>$creator</b>";
+                                        echo "<b style='opacity:0.2'>$creator</b>";
                                         break;
                                     }
                                             // Audio-Container: zum Abspielen der Feedbacks
