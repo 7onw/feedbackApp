@@ -14,11 +14,11 @@
 
   ***2. Seite - Aufgaben (aktive Aufgaben der anderen Personen):***
 
-  - [ ] soll der Name des Users (der erstellten Aufgabe) irgendwo stehen?
+  - [x] ~~soll der Name des Users (der erstellten Aufgabe) irgendwo stehen?~~
 
-  - [ ] Pop-up in DB: soll automatisch auf a_aktiv=1 gesetzt werden, wenn neue Aufgabe abgesendet wurde
+  - [x] ~~Pop-up in DB: soll automatisch auf a_aktiv=1 gesetzt werden, wenn neue Aufgabe abgesendet wurde~~
 
-    Pop-Up:~~~~
+    ~~Pop-Up:~~~~~~
 
     - [x] ~~<u>Audioaufnahme starten -> Aufnehmen</u>~~
     - [x] ~~<u>Audioaufnahme speichern und auf DB laden</u>~~
@@ -28,7 +28,7 @@
 
   - [x] ~~<u>eigene (abgelaufene oder laufende) Aufgaben sind sichtbar</u>~~
   - [ ] Benachrichtigung für neue Feedbacks (?)
-  - [ ] Pop-Up:
+  - [x] ~~Pop-Up:~~
     - [x] ~~<u>Sound (Feedbacks) aller User können abgespielt werden</u>~~
 
   

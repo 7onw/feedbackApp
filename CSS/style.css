@@ -1,11 +1,61 @@
-/* ----- Font ----- */
+/* ---------- Font ---------- */
 @font-face {
     font-family: OpenSansCondensed;
     src: url(../font/OpenSansCondensed-Light.ttf);
 }
 
+/* ----- UI Page Theme ----- */
+/* Hintergrund */
+.ui-page {
+	background-image:url(../images/bg.jpg);
+	background-size:cover; 
+}
+.ui-content {
+    padding: 0em !important;
+}
+.ui-content form {
+    margin: 10%;
+    opacity: 0.85;
+    padding-top: 13%;
+}
+.ui-content > form > p {
+    color: #f1f1f1;
+    opacity: 0.6;
+    margin: 2%;
+}
 
-/* ----- Body ----- */
+/* Header und Footer */
+.ui-page-theme-a .ui-bar-inherit {
+	/*background-color: #0000 !important;*/
+    color: #f1f1f1 !important;
+}
+
+/* Buttons */
+.ui-btn .ui-input-btn .ui-corner-all .ui-shadow {
+    background-color: none !important;
+}
+.ui-noback-icon, .ui-noback-icon a  {
+	text-transform: uppercase;
+	background-color: transparent !important;
+	color: white !important;
+}
+.ui-nodisc-icon, ui-noback-icon {
+    overflow: hidden;
+}
+.button-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+}
+.collapsed {
+    visibility: collapse;
+    height: 0px !important;
+}
+.upload-textbox {
+    margin: 5%;
+}
+
+/* ---------- Body ---------- */
 body, body * {
 	font-family: OpenSansCondensed !important;
 	letter-spacing: 0.1em !important;
@@ -22,6 +72,21 @@ h1 {
     margin-top: 14%;
 }
 
+/* ----- Header ----- */
+[data-role="header"] {
+	position: fixed !important; 
+	width: 100%; 
+	height: 50px; 
+	z-index: 100;
+    display:table;
+    text-align:center; 
+    background-color: black !important;
+}
+[data-role="header"] .ui-title {
+	display:table-cell; 
+	vertical-align:middle
+}
+
 /* ----- Navbar ----- */
 [data-role="navbar"] {
 	margin-top: -36px; 
@@ -32,7 +97,6 @@ h1 {
 }
 [data-role="navbar"] a {
 	background-color: black;
-	/*color: white !important;*/
 	opacity: 0.9;
 }
 [data-role="tabs"] {
@@ -54,244 +118,188 @@ h1 {
     margin: auto;
 }
 
-
-/* ----- UI Page Theme ----- */
-/* Hintergrund */
-.ui-page {
-	background-image:url(../images/bg.jpg);
-	background-size:cover; 
+/* Shadow */
+.ui-page-theme-a .ui-btn.ui-btn-active {
+    background-color: #F6F6F6 !important;
+    color: black !important;
+    border-color: #4a5152 !important;
+    box-shadow: 0 0 3px #d6d6d6 !important;
+    opacity: 1 !important;
 }
 
-.ui-content {
-    padding: 0em !important;
+/* NavBar: Tab-Inhalt */
+.tab-content {
+    text-align: center;
+    margin-top: 35px !important;
+    margin-bottom: 45px;
+}
+.tab-content img {
+    width: 80%
+}
+/* NavBar: Tab-Inhalt 1 */
+#hidden-upload-form {
+    display: none; /*Form wird komplett ausgeblendet, sonst existiert sie noch ganz unten*/ 
 }
 
-.ui-content form {
-    margin: 10%;
-    opacity: 0.85;
-    padding-top: 13%;
+#image-div > img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; 
+    width: 0;
+    height: 0;
+    padding-top: 100%;
+    padding-left: 100%
 }
 
-.ui-content > form > p {
-    color: #f1f1f1;
-    opacity: 0.6;
-    margin: 2%;
+/* Kreis-Animation */
+#circles-div {
+    height: 400px;
 }
-
-/* Header und Footer */
-.ui-page-theme-a .ui-bar-inherit {
-	/*background-color: #0000 !important;*/
-    color: #f1f1f1 !important;
-}
-
-.ui-btn .ui-input-btn .ui-corner-all .ui-shadow {
-    background-color: none !important;
-}
-
-/* Buttons */
-.ui-noback-icon, .ui-noback-icon a  {
-	text-transform: uppercase;
-	background-color: transparent !important;
-	color: white !important;
-}
-
-.ui-nodisc-icon, ui-noback-icon {
+.circle-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
+    position: relative;
+}
+.circle {
+    border-radius: 50%;
+    background-color: #F6F6F611 !important;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    opacity: 0;
+    animation: scaleIn 6s infinite ease-out;
+}
+.circle > * {
+    margin-top: 50px
 }
 
-.button-disabled {
+@keyframes scaleIn {
+    from {
+        transform: scale(.5, .5);
+        opacity: .5;
+    }
+    to {
+        transform: scale(2.5, 2.5);
+        opacity: 0;
+    }
+}
+
+/* NavBar: Tab-Inhalt 2 */
+/* Aufgaben */
+#two li > a > div > div, #three li > a > div > div {
+    width: 30%;
+    float: left;
+}
+#two li > p, #three li > p {
+    margin-left: 35%
+}
+.ui-listview > li p {
+    padding-top: 2%;
+    font-size: 0.85em !important;
+}
+#text-inhalt {
+    font-size: 0.75em !important;
+}
+
+/* ----- Pop-Up ----- */
+[data-role="popup"] h1 {
+    margin: 0px;
+    margin-top: 10px;
+    display: inline-block;
+}
+[data-role="popup"] a {
+    float: right;
+    margin-right: 0px;
+}
+[data-role="popup"] img {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+[data-role="popup"] p {
+    text-align: center;
+}
+[data-role="popup"] {
+    max-width:350px;
+    padding: 10px 20px;
+}
+[data-role="popup"] ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+/* ----- Recording ----- */
+audio{display:none} .audioContainer {
+    height:50px;width:250px;
+    border:solid 1px #dedede;
+    position:relative;
+    margin-bottom: 5px;
+}
+.audioProgress {
+    height:50px;
+    float:left;
+    background-color:#f2f2f2;
+    z-index:800
+}
+.audioControl {
+    position: absolute;
+    float:left;
+    width:52px;
+    height:48px;;
+}
+.audioTime {
+    position: absolute;
+    width: 45px;
+    height: 20px;
+    right: 0px;
+    float: right;
+    color: #c8d0d1;
+}
+.audioTimestamp {
+    height: 100%;
+    position: absolute;
+    width: 147px;
+    margin-left: 53px;
+}
+.audioPlay {
+    background:url('../images/play.png');
+    background-size:     contain;
+    background-repeat:   no-repeat;
+    background-position: center center; 
+} 
+.audioPause {
+    background:url('../images/pause.png');
+    background-size:     contain;
+    background-repeat:   no-repeat;
+    background-position: center center; 
+}
+.recordAudioTime {
+    text-align: center;
+}
+
+.recordAudioButton {
+    margin: auto !important;
+    width: auto !important;
+    margin-top: 15% !important;
+}
+#popup-line {
+    height: 1px;
+    background-color: #dddddd;
+    margin-bottom: 10%;
+    margin-top: 5%;
+}
+.popup-info-aufnahme {
+    font-size: small;
     opacity: 0.5;
-    pointer-events: none;
-    cursor: default;
 }
-
-.collapsed {
-    visibility: collapse;
-    height: 0px !important;
+.popup-info-senden {
+    font-size: small;
+    opacity: 0.5;
 }
-
-.upload-textbox {
-    margin: 5%;
-}
-
-/* NavBar */
-    /* Shadow */
-    .ui-page-theme-a .ui-btn.ui-btn-active {
-        background-color: #F6F6F6 !important;
-        color: black !important;
-        border-color: #4a5152 !important;
-        box-shadow: 0 0 3px #d6d6d6 !important;
-        opacity: 1 !important;
-    }
-    /* NavBar: Tab-Inhalt */
-    .tab-content {
-        text-align: center;
-        margin-top: 35px !important;
-        margin-bottom: 45px;
-    }
-    .tab-content img {
-	    width: 80%
-    }
-        /* NavBar: Tab-Inhalt 1 */
-            #hidden-upload-form {
-                /*visibility: collapse;*/
-                display: none; /*Form wird komplett ausgeblendet, sonst existiert sie noch ganz unten*/ 
-            }
-            
-            #circles-div {
-                height: 400px;
-            }
-            #image-div > img {
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center; 
-                width: 0;
-                height: 0;
-                padding-top: 100%;
-                padding-left: 100%
-            }
-
-            /* Kreis-Animation */
-            .circle-container {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                overflow: hidden;
-                position: relative;
-            }
-            .circle {
-                border-radius: 50%;
-                background-color: #F6F6F611 !important;
-                width: 150px;
-                height: 150px;
-                position: absolute;
-                opacity: 0;
-                animation: scaleIn 6s infinite ease-out;
-            }
-            .circle > * {
-                margin-top: 50px
-            }
-            @keyframes scaleIn {
-                from {
-                  transform: scale(.5, .5);
-                  opacity: .5;
-                }
-                to {
-                  transform: scale(2.5, 2.5);
-                  opacity: 0;
-                }
-              }
-        /* NavBar: Tab-Inhalt 2 */
-            /* Aufgaben */
-            #two li > a > div > div, #three li > a > div > div {
-                width: 30%;
-                float: left;
-            }
-            #two li > p, #three li > p {
-                margin-left: 35%
-            }
-            .ui-listview > li p {
-                padding-top: 2%;
-                font-size: 0.85em !important;
-            }
-
-            #text-inhalt {
-                font-size: 0.75em !important;
-            }
-
-            /* ----- Pop-Up ----- */
-            [data-role="popup"] h1 {
-                margin: 0px;
-                margin-top: 10px;
-                display: inline-block;
-            }
-            [data-role="popup"] a {
-                float: right;
-                margin-right: 0px;
-            }
-            [data-role="popup"] img {
-                padding-top: 10px;
-                padding-bottom: 10px;
-                width: 100%;
-            }
-            [data-role="popup"] p {
-                text-align: center;
-            }
-            [data-role="popup"] {
-                max-width:350px;
-                padding: 10px 20px;
-            }
-            [data-role="popup"] ul {
-                list-style-type: none;
-                padding-left: 0px;
-            }
-
-            /* ----- Recording ----- */
-            audio{display:none} .audioContainer {
-                height:50px;width:250px;
-                border:solid 1px #dedede;
-                position:relative;
-                margin-bottom: 5px;
-            }
-            .audioProgress {
-                height:50px;float:left;background-color:#f2f2f2;z-index:800
-            }
-            .audioControl {
-                position: absolute;float:left;width:52px;height:48px;;
-            }
-            .audioTime {
-                position: absolute;
-                width: 45px;
-                height: 20px;
-                right: 0px;
-                float: right;
-                color: #c8d0d1;
-            }
-            .audioTimestamp {
-                height: 100%;
-                position: absolute;
-                width: 147px;
-                margin-left: 53px;
-            }
-            .audioPlay {
-                background:url('../images/play.png');
-                background-size:     contain;
-                background-repeat:   no-repeat;
-                background-position: center center; 
-            } 
-            .audioPause {
-                background:url('../images/pause.png');
-                background-size:     contain;
-                background-repeat:   no-repeat;
-                background-position: center center; 
-            }
-            .recordAudioTime {
-                text-align: center;
-            }
-
-            .recordAudioButton {
-                margin: auto !important;
-                width: auto !important;
-                margin-top: 15% !important;
-            }
-            #popup-line {
-                height: 1px;
-                background-color: #dddddd;
-                margin-bottom: 10%;
-                margin-top: 5%;
-            }
-            .popup-info-aufnahme {
-                font-size: small;
-                opacity: 0.5;
-            }
-            .popup-info-senden {
-                font-size: small;
-                opacity: 0.5;
-            }
-        
-        /* NavBar: Tab-Inhalt 3 */
 
 /* ----- Footer ----- */
 [data-role="footer"] {
@@ -306,40 +314,11 @@ h1 {
     display: table;
     opacity: 0.6;
     background-color: black !important;
-
 }
 [data-role="footer"] .ui-title {
 	display:table-cell !important; 
 	vertical-align:middle !important;
 }
-
 #one > div > a, #one > div > div > a {
 	margin: 20px 0px 0px 0px;
-}
-
-/*
-#three li > a > div > div {
-	width: 30%;
-	float: left
-}
-
-#three li > p {
-	margin-left: 35%
-}*/
-
-
-/* ----- Header ----- */
-[data-role="header"] {
-	position: fixed !important; 
-	width: 100%; 
-	height: 50px; 
-	z-index: 100;
-    display:table;
-    text-align:center; 
-    background-color: black !important;
-}
-
-[data-role="header"] .ui-title {
-	display:table-cell; 
-	vertical-align:middle
 }
