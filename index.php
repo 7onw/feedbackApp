@@ -61,7 +61,7 @@
 
                     <!-- Navbar: #one Upload -->
                     <div id="one" class="tab-content ui-content" date-role="content">
-                    	<div>Hallo Sara!</div>
+                    	<div>Hallo <?php echo $_SESSION['user_name']; ?></div>
                         <div class="ui-nodisc-icon ui-noback-icon">
                             <!-- Circle Animation -->
                             <div id="circles-div" class="circle-container">
@@ -245,9 +245,7 @@
             <!-- Footer -->
             <div data-role="footer">
                 <h3>© Sara Unteregger & Simon Wünscher | <a href="logout.php">logout</a></h3> 
-                <?php
-                    echo $_SESSION['user_name'];
-                ?>
+
             </div>
             <!-- /Footer -->
         </div>
